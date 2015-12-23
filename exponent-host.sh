@@ -1,16 +1,21 @@
 #!/bin/bash
 
+GIT_URL=git@github.com:exponentjs/exponent-host-internal.git
+BUILD_DIR=~/build/exponent-host
+
 # clean old
-rm -rf clone build
+rm -rf $BUILD_DIR
+mkdir -p $BUILD_DIR
+cd $BUILD_DIR
 
 # clone from git
-git clone git@github.com:exponentjs/exponent-host-internal.git clone
+git clone $GIT_URL clone
 
 # extract bare tree
 cd clone
-mkdir ../build
-git archive master | tar -x -C ../build
-cd ../build
+mkdir ../bare
+git archive master | tar -x -C ../bare
+cd ../bare
 
 # build
 npm install
