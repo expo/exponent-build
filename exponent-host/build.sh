@@ -2,6 +2,7 @@
 
 GIT_URL=git@github.com:exponentjs/exponent-host-internal.git
 BUILD_DIR=~/build/exponent-host
+DEPLOY_DIR=~/exponent-build/exponent-host
 NODE_VERSION=4.2.3
 
 # clean old
@@ -18,12 +19,17 @@ mkdir ../bare
 git archive master | tar -x -C ../bare
 cd ../bare
 
-# get node
+# select node version
 . ~/.nvm/nvm.sh
 nvm install $NODE_VERSION
-nvm use $NODE_VERSION
 
 # build
 npm install
 npm run gulp -- clean
 npm run gulp -- build
+#npm prune --production
+
+# deploy
+zip -r $BUILD_DIR/archive.zip .
+cd $DEPLOY_DIR
+eb deploy

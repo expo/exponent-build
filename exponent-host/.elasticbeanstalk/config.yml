@@ -1,0 +1,12 @@
+branch-defaults:
+  default:
+    environment: prod-1
+deploy:
+  artifact: /home/ec2-user/build/exponent-host/archive.zip
+global:
+  application_name: exponentjs.com
+  default_ec2_keyname: exp.host
+  default_platform: 64bit Amazon Linux 2015.09 v2.0.5 running Node.js
+  default_region: us-west-1
+  profile: eb-cli
+  sc: null
