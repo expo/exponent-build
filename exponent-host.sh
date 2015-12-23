@@ -2,6 +2,7 @@
 
 GIT_URL=git@github.com:exponentjs/exponent-host-internal.git
 BUILD_DIR=~/build/exponent-host
+NODE_VERSION=4.2.3
 
 # clean old
 rm -rf $BUILD_DIR
@@ -16,6 +17,10 @@ cd clone
 mkdir ../bare
 git archive master | tar -x -C ../bare
 cd ../bare
+
+# get node
+nvm install $NODE_VERSION
+nvm use $NODE_VERSION
 
 # build
 npm install
