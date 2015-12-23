@@ -19,6 +19,7 @@ git archive master | tar -x -C ../bare
 cd ../bare
 
 # get node
+. ~/.nvm/nvm.sh
 nvm install $NODE_VERSION
 nvm use $NODE_VERSION
 
