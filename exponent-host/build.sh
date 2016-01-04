@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 GIT_URL=git@github.com:exponentjs/exponent-host-internal.git
 BUILD_DIR=~/build/exponent-host
