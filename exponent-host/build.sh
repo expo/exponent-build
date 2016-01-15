@@ -31,6 +31,6 @@ npm run gulp -- build
 #npm prune --production
 
 # deploy
-zip -r $BUILD_DIR/archive.zip .
+zip -rqy $BUILD_DIR/archive.zip .
 cd $DEPLOY_DIR
 eb deploy
