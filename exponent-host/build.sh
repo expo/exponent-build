@@ -23,6 +23,7 @@ cd ../bare
 # select node version
 . ~/.nvm/nvm.sh
 nvm install $NODE_VERSION
+npm update -g npm
 
 # build
 npm install
